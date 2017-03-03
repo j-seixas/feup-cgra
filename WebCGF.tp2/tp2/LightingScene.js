@@ -42,7 +42,7 @@ LightingScene.prototype.init = function(application) {
 	this.materialA = new CGFappearance(this);
 	this.materialA.setAmbient(0.3,0.3,0.3,1);
 	this.materialA.setDiffuse(0.6,0.6,0.6,1);
-	this.materialA.setSpecular(255,255,0.8,1);
+	this.materialA.setSpecular(0,0,0.8,1);
 	this.materialA.setShininess(120);
 
 	this.materialB = new CGFappearance(this);
@@ -74,6 +74,7 @@ LightingScene.prototype.initLights = function() {
 	//this.lights[1].setVisible(true); // show marker on light position (different from enabled)
 
 	this.lights[0].setAmbient(0, 0, 0, 1);
+	this.lights[0].setSpecular(1.0, 1.0, 0, 1);
 	this.lights[0].setDiffuse(1.0, 1.0, 1.0, 1.0);
 	this.lights[0].enable();
 
