@@ -15,13 +15,7 @@
  MyPrism.prototype.constructor = MyPrism;
 
  MyPrism.prototype.initBuffers = function() {
- 	/*
- 	* TODO:
- 	* Replace the following lines in order to build a prism with a **single mesh**.
- 	*
- 	* How can the vertices, indices and normals arrays be defined to
- 	* build a prism with varying number of slices and stacks?
- 	*/
+ 
 	this.vertices = [];
 	this.indices = [];
 	this.normals = [];
