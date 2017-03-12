@@ -10,7 +10,8 @@ function MyPrism(scene, slices, stacks) {
 
     this.initBuffers();
 }
-;MyPrism.prototype = Object.create(CGFobject.prototype);
+;
+MyPrism.prototype = Object.create(CGFobject.prototype);
 MyPrism.prototype.constructor = MyPrism;
 
 MyPrism.prototype.initBuffers = function() {
