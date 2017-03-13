@@ -26,7 +26,7 @@ LightingScene.prototype.init = function(application) {
     this.gl.enable(this.gl.CULL_FACE);
     this.gl.depthFunc(this.gl.LEQUAL);
 
-    this.axis = new CGFaxis(this);
+    this.axis = new CGFaxis(this,5);
 
     // Scene elements
     this.table = new MyTable(this);
@@ -37,7 +37,6 @@ LightingScene.prototype.init = function(application) {
     this.boardB = new Plane(this,BOARD_B_DIVISIONS);
 
     this.prism = new MyPrism(this,8,20);
-    this.cylinder = new MyCylinder(this,8,20);
 
     // Materials
     this.materialDefault = new CGFappearance(this);
@@ -169,7 +168,7 @@ LightingScene.prototype.display = function() {
 
     // ---- BEGIN Primitive drawing section
 
-/*
+
     // Floor
     this.pushMatrix();
     this.translate(7.5, 0, 7.5);
@@ -225,10 +224,15 @@ LightingScene.prototype.display = function() {
     this.materialB.apply();
     this.boardB.display();
     this.popMatrix();
-*/
+
     this.pushMatrix();
+    
+    this.translate(1,0,14);
+    this.rotate(-Math.PI/2, 1,0,0);
+    this.scale(1,1,8);
     this.prism.display();
     this.popMatrix();
+
 
 
     // ---- END Primitive drawing section
