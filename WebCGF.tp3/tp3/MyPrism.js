@@ -31,14 +31,6 @@ MyPrism.prototype.initBuffers = function() {
                 this.vertices.push(Math.cos((i + 1) * ang), Math.sin((i + 1) * ang), 0);
                 this.vertices.push(Math.cos((i + 1) * ang), Math.sin((i + 1) * ang), (j + 1) / this.stacks);
 
-                this.normals.push(Math.cos((i + 0.5) * ang), Math.sin((i + 0.5) * ang), 0);
-                this.normals.push(Math.cos((i + 0.5) * ang), Math.sin((i + 0.5) * ang), 0);
-                this.normals.push(Math.cos((i + 0.5) * ang), Math.sin((i + 0.5) * ang), 0);
-                this.normals.push(Math.cos((i + 0.5) * ang), Math.sin((i + 0.5) * ang), 0);
-
-                this.indices.push(1 + (4 * i) + (4 * this.slices * j), 0 + (4 * i) + (4 * this.slices * j), 2 + (4 * i) + (4 * this.slices * j));
-                this.indices.push(2 + (4 * i) + (4 * this.slices * j), 3 + (4 * i) + (4 * this.slices * j), 1 + (4 * i) + (4 * this.slices * j));
-
             } else {
 
                 this.vertices.push(Math.cos(i * ang), Math.sin(i * ang), j / this.stacks);
@@ -46,14 +38,16 @@ MyPrism.prototype.initBuffers = function() {
                 this.vertices.push(Math.cos((i + 1) * ang), Math.sin((i + 1) * ang), j / this.stacks);
                 this.vertices.push(Math.cos((i + 1) * ang), Math.sin((i + 1) * ang), (j + 1) / this.stacks);
 
-                this.normals.push(Math.cos((i + 0.5) * ang), Math.sin((i + 0.5) * ang), 0);
-                this.normals.push(Math.cos((i + 0.5) * ang), Math.sin((i + 0.5) * ang), 0);
-                this.normals.push(Math.cos((i + 0.5) * ang), Math.sin((i + 0.5) * ang), 0);
-                this.normals.push(Math.cos((i + 0.5) * ang), Math.sin((i + 0.5) * ang), 0);
-
-                this.indices.push(1 + (4 * i) + (4 * this.slices * j), 0 + (4 * i) + (4 * this.slices * j), 2 + (4 * i) + (4 * this.slices * j));
-                this.indices.push(2 + (4 * i) + (4 * this.slices * j), 3 + (4 * i) + (4 * this.slices * j), 1 + (4 * i) + (4 * this.slices * j));
             }
+
+            this.normals.push(Math.cos((i + 0.5) * ang), Math.sin((i + 0.5) * ang), 0);
+            this.normals.push(Math.cos((i + 0.5) * ang), Math.sin((i + 0.5) * ang), 0);
+            this.normals.push(Math.cos((i + 0.5) * ang), Math.sin((i + 0.5) * ang), 0);
+            this.normals.push(Math.cos((i + 0.5) * ang), Math.sin((i + 0.5) * ang), 0);
+
+            this.indices.push(1 + (4 * i) + (4 * this.slices * j), 0 + (4 * i) + (4 * this.slices * j), 2 + (4 * i) + (4 * this.slices * j));
+            this.indices.push(2 + (4 * i) + (4 * this.slices * j), 3 + (4 * i) + (4 * this.slices * j), 1 + (4 * i) + (4 * this.slices * j));
+
         }
     }
 
