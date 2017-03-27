@@ -124,6 +124,9 @@ LightingScene.prototype.initLights = function() {
     this.lights[3].setVisible(true);
     // show marker on light position (different from enabled)
 
+    this.lights[4].setPosition(0, 4, 7.5, 1);
+    this.lights[4].setVisible(true);
+    
     this.lights[0].setAmbient(0, 0, 0, 1);
     this.lights[0].setSpecular(1.0, 1.0, 0, 1);
     this.lights[0].setDiffuse(1.0, 1.0, 1.0, 1.0);
@@ -148,6 +151,11 @@ LightingScene.prototype.initLights = function() {
     this.lights[3].setSpecular(1.0, 1.0, 0, 1);
     this.lights[3].setDiffuse(1.0, 1.0, 1.0, 1.0);
     this.lights[3].enable();
+    
+    this.lights[4].setAmbient(0, 0, 0, 1);
+    this.lights[4].setSpecular(1.0, 1.0, 1.0, 1);
+    this.lights[4].setDiffuse(1.0, 1.0, 1.0, 1.0);
+    this.lights[4].enable();
 }
 ;
 
